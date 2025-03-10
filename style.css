@@ -1,0 +1,27 @@
+.main {
+  position: relative;
+  width: 1400px;
+  height: 900px;
+  background-color: #111111;
+}
+
+.block-images {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 812px;
+  height: 700px;
+  border-radius: 50%;
+  background-image: linear-gradient(to right, #b0cfe6, #0067e0);
+  opacity: 0.5;
+  filter: blur(70px);
+  transform: rotate(172deg);
+  z-index: 0;
+}
+
+.men-block {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
