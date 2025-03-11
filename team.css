@@ -1,0 +1,98 @@
+.team {
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team-title {
+  margin-top: 60px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #1d1d1f;
+}
+
+.team-describe {
+  margin-top: 24px;
+  width: 1080px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: medium;
+  color: #747478;
+}
+
+.mobile-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.mobile-slider .slide {
+  flex: 0 0 auto;
+  width: 306px;
+  height: 189px;
+}
+
+.mobile-slider .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.desktop-grid {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-slider {
+    display: none;
+  }
+
+  .desktop-grid {
+    margin-top: 96px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 24px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .desktop-grid .grid-block {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 24px;
+  }
+
+  .desktop-grid .grid-block .bottom {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 306px);
+    gap: 24px;
+  }
+
+  .desktop-grid .grid-block .bottom img {
+    width: 306px;
+    height: 189px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .desktop-grid .grid-block .top {
+    grid-row: 2;
+  }
+
+  .desktop-grid .grid-block .top img {
+    width: 635px;
+    height: 392px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .desktop-grid .grid-block:first-child .top {
+    grid-row: 1;
+  }
+
+  .desktop-grid .grid-block:first-child .bottom {
+    grid-row: 2;
+  }
+}
