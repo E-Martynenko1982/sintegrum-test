@@ -1,171 +1,153 @@
-/* ----- Секция .program ----- */
 .program {
-  width: 1400px;
-  margin-top: 120px;
-
+  width: 100%;
+  max-width: 1400px;
+  margin: 60px auto 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .program-title {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-/* Список с картинками */
 .program-list {
-  padding: 0;
-  width: 1296px;
+  max-width: 1296px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 24px;
+  gap: 24px;
   list-style: none;
+  margin-bottom: 60px;
 }
 
 .program-item {
-  margin-top: 96px;
+  flex: 1 1 300px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .program-item img {
-  margin-bottom: 24px;
-  width: 85px;
-  height: 75px;
+  width: 64px;
+  height: auto;
+  margin-bottom: 16px;
 }
 
 .program-item-title {
-  margin-bottom: 12px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 34px;
+  margin-bottom: 12px;
 }
 
 .program-item-text {
-  width: 416px;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 24px;
   color: #747478;
 }
 
-/* ----- Блок .program-course ----- */
 .program-course {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 120px;
-  padding: 120px 48px;
-  width: 1296px;
-  /* Высота динамическая */
-  height: auto;
+  width: 100%;
+  max-width: 1296px;
+  margin: 0 auto 60px auto;
+  padding: 60px 20px;
   border-radius: 16px;
   background-color: #000000;
 }
 
 .program-course-title {
+  text-align: center;
   color: #ffffff;
-  font-size: 48px;
+  font-size: 32px;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 40px;
 }
 
-/* Основной список (программы курса) */
 .program-course-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Общие стили для пунктов списка */
-.program-course-item {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 27px;
-  margin-top: 48px;
-}
-
-/* Пункты, которые могут раскрываться (псевдоним "arrow") */
 .program-course-item__arrow {
-  /* По желанию можно добавить иконку, но тут явная кнопка */
+  margin-bottom: 24px;
+  border-bottom: 1px solid #4744c9;
+  padding-bottom: 16px;
 }
 
-/* Шапка пункта (заголовок + 2 кнопки) в одну строку */
 .program-course-item-header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
-/* Крупный заголовок для раскрываемых */
-.program-course-item__arrow h2 {
-  font-size: 24px;
+.program-course-item-header h2 {
+  font-size: 20px;
   font-weight: 700;
-  line-height: 34px;
+  color: #ffffff;
   margin: 0;
 }
 
-/* Кнопка-стрелка / Кнопка-закрыть – стили по вкусу */
-.header-nav-link-arrow {
-  background: none;
-  border: none;
+.program-course-item--variant {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
-  padding: 0; /* убираем внутренние отступы */
 }
 
-/* Подсписок внутри раскрываемого пункта */
+.program-course-item--variant h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
 .program-course-sublist {
   display: none;
   list-style: none;
-  padding-left: 32px; /* визуальное смещение */
   margin-top: 16px;
+  padding-left: 20px;
 }
 
-/* Каждый подпункт – небольшой отступ между собой */
 .program-course-sublist .program-course-item {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #ffffff;
 }
 
-/* Кнопка для скачивания */
 .program-course-button {
-  margin-top: 96px;
-  width: 331px;
-  height: 54px;
+  display: block;
+  margin: 40px auto 0 auto;
+  width: 250px;
+  height: 50px;
   border-radius: 4px;
-  font-size: 17px;
-  line-height: 27px;
-  font-weight: 900;
+  font-size: 16px;
+  font-weight: 700;
   background-color: #4744c9;
   color: #ffffff;
   border: none;
   cursor: pointer;
 }
 
-/* --- Логика показа "открыть" / "закрыть" --- */
-
-/* По умолчанию кнопку "закрыть" скрываем */
 .close-list-btn {
   display: none;
 }
 
-/* Если нет класса .active, показываем только "открыть" */
-.program-course-item__arrow:not(.active) .open-list-btn {
-  display: inline-block;
-}
-.program-course-item__arrow:not(.active) .close-list-btn {
-  display: none;
-}
-
-/* Если .active, наоборот */
 .program-course-item__arrow.active .open-list-btn {
   display: none;
 }
+
 .program-course-item__arrow.active .close-list-btn {
   display: inline-block;
 }
 
-/* --- Показ и скрытие подсписка --- */
 .program-course-item__arrow.active .program-course-sublist {
   display: block;
 }
